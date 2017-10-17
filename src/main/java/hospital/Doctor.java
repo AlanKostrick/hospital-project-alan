@@ -1,6 +1,6 @@
 package hospital;
 
-public class Doctor extends HospitalEmployee {
+public class Doctor extends HospitalEmployee implements MedicalDuties {
 
 	protected String speciality;
 	
@@ -18,10 +18,12 @@ public class Doctor extends HospitalEmployee {
 		return 90000;
 	}
 	
+	@Override
 	public boolean drawBlood() {
 		return true;
 	}
 	
+	@Override
 	public void careForPatient() {
 		patientHealth *=2;
 	}

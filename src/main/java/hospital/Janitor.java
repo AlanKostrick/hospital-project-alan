@@ -9,6 +9,7 @@ public class Janitor extends HospitalEmployee {
 		this.isSweeping = isSweeping;
 	}
 	
+	
 	public boolean checkIfSweeping() {
 		return isSweeping;
 	}

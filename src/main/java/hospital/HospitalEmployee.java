@@ -26,6 +26,7 @@ public abstract class HospitalEmployee {
 	
 	abstract double calculatePay();
 	
+	
 	@Override
 	public String toString() {
 		return empName + "\t" + empNumber;

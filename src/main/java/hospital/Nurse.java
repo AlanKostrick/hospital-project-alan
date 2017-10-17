@@ -1,6 +1,6 @@
 package hospital;
 
-public class Nurse extends HospitalEmployee {
+public class Nurse extends HospitalEmployee implements MedicalDuties {
 
 	protected int numPatients;
 	
@@ -8,9 +8,14 @@ public class Nurse extends HospitalEmployee {
 		super(empName, empNumber);
 		this.numPatients = numPatients;
 	}
+	
+	public Nurse(String empName, String empNumber) {
+		super(empName, empNumber);
+		numPatients = 0;
+	}
 
 	@Override
-	double calculatePay() {
+	public double calculatePay() {
 		return 50000;
 	}
 
@@ -18,11 +23,13 @@ public class Nurse extends HospitalEmployee {
 		return numPatients;
 	}
 	
+	@Override
 	public boolean drawBlood() {
 		return true;
 	}
 	
-	public void careForPatients() {
+	@Override
+	public void careForPatient() {
 		patientHealth += 5;
 	}
 	
@@ -30,5 +37,6 @@ public class Nurse extends HospitalEmployee {
 	public String toString() {
 		return super.toString() + "\t" + numPatients;
 	}
+
 
 }
